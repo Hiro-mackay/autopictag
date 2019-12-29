@@ -13,25 +13,25 @@ function autopictag(options) {
             options.smWidth !== void 0 ?
             typeof options.smWidth === "string" ?
             Number(options.smWidth) :
-            SM_WIDTH :
+            options.smWidth :
             SM_WIDTH;
         MD_WIDTH =
             options.mdWidth !== void 0 ?
             typeof options.mdWidth === "string" ?
             Number(options.mdWidth) :
-            MD_WIDTH :
+            options.mdWidth :
             MD_WIDTH;
         LG_WIDTH =
             options.lgWidth !== void 0 ?
             typeof options.lgWidth === "string" ?
             Number(options.lgWidth) :
-            LG_WIDTH :
+            options.lgWidth :
             LG_WIDTH;
         XL_WIDTH =
             options.xlWidth !== void 0 ?
             typeof options.xlWidth === "string" ?
             Number(options.xlWidth) :
-            XL_WIDTH :
+            options.xlWidth :
             XL_WIDTH;
     }
     const imageTagsQuery = document.getElementsByTagName("img");
