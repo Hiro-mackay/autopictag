@@ -10,25 +10,25 @@ function autopictag(options) {
             options.smWidth !== void 0 ?
             typeof options.smWidth === "string" ?
             Number(options.smWidth) :
-            SM_WIDTH :
+            options.smWidth :
             SM_WIDTH;
         MD_WIDTH =
             options.mdWidth !== void 0 ?
             typeof options.mdWidth === "string" ?
             Number(options.mdWidth) :
-            MD_WIDTH :
+            options.mdWidth :
             MD_WIDTH;
         LG_WIDTH =
             options.lgWidth !== void 0 ?
             typeof options.lgWidth === "string" ?
             Number(options.lgWidth) :
-            LG_WIDTH :
+            options.lgWidth :
             LG_WIDTH;
         XL_WIDTH =
             options.xlWidth !== void 0 ?
             typeof options.xlWidth === "string" ?
             Number(options.xlWidth) :
-            XL_WIDTH :
+            options.xlWidth :
             XL_WIDTH;
     }
     const imageTagsQuery = document.getElementsByTagName("img");
@@ -37,10 +37,10 @@ function autopictag(options) {
         wrap(img, creactPictureDom);
         let imgSrc = img.src;
         const imgMapSrc = new Map([
-            ["(min-width: 1500px)", imgSrc.replace("img/lg", "img/xl")],
-            ["(min-width: 960px)", imgSrc],
-            ["(min-width: 640px)", imgSrc.replace("img/lg", "img/md")],
-            ["(min-width: 0px)", imgSrc.replace("img/lg", "img/sm")]
+            [`(min-width: ${XL_WIDTH}px)`, imgSrc.replace("img/lg", "img/xl")],
+            [`(min-width: ${LG_WIDTH}px)`, imgSrc],
+            [`(min-width: ${MD_WIDTH}px)`, imgSrc.replace("img/lg", "img/md")],
+            [`(min-width: ${SM_WIDTH}px)`, imgSrc.replace("img/lg", "img/sm")]
         ]);
         for (const [key, val] of imgMapSrc) {
             let createSourceDom = document.createElement("source");
