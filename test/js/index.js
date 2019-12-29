@@ -1,7 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
 let SM_WIDTH = 640,
     MD_WIDTH = 960,
     LG_WIDTH = 1440,
@@ -62,4 +59,3 @@ function wrap(element, wrapper) {
 function insertBefore(addElement, element) {
     element.parentNode.insertBefore(addElement, element);
 }
-exports.default = autopictag;
